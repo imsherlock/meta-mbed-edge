@@ -33,6 +33,8 @@ FILES_${PN} += "/opt \
 FILES_${PN}-dbg += "/opt/arm/.debug \
                     /usr/src/debug/mbed-edge-internal"
 
+inherit cmake
+
 do_configure() {
     cd "${WORKDIR}/git"
 
@@ -81,9 +83,9 @@ do_install() {
     install -m 644 "${WORKDIR}/edge-core" "${D}${sysconfdir}/logrotate.d"
     install -m 644 "${WORKDIR}/pt-example" "${D}${sysconfdir}/logrotate.d"
 
-    install -m 755 "${SCRIPT_DIR}/arm_update_cmdline.sh"                  "${D}/opt/arm"
-    install -m 755 "${SCRIPT_DIR}/yocto_rpi/arm_update_activate.sh"       "${D}/opt/arm"
-    install -m 755 "${SCRIPT_DIR}/yocto_rpi/arm_update_active_details.sh" "${D}/opt/arm"
+#    install -m 755 "${SCRIPT_DIR}/arm_update_cmdline.sh"                  "${D}/opt/arm"
+#    install -m 755 "${SCRIPT_DIR}/yocto_rpi/arm_update_activate.sh"       "${D}/opt/arm"
+#    install -m 755 "${SCRIPT_DIR}/yocto_rpi/arm_update_active_details.sh" "${D}/opt/arm"
 
     # The init scripts need to be linked by hand because there are two of them, one for the edge-core and
     # another for pt-example
