@@ -7,7 +7,7 @@ SCRIPT_DIR = "${WORKDIR}/git/mbed-edge-module-sources/update-client-hub/modules/
 # Patches for quilt goes to files directory
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-SRC_URI = "git://git@github.com/ARMmbed/mbed-edge.git;protocol=ssh; \
+SRC_URI = "git://git@github.com/imsherlock/mbed-edge.git;protocol=ssh; \
            file://mbed-edge-core.sh \
            file://mbed-edge-pt-example.sh \
            file://mbed_cloud_client_user_config.h \
@@ -18,9 +18,9 @@ SRC_URI = "git://git@github.com/ARMmbed/mbed-edge.git;protocol=ssh; \
            file://edge-core \
            file://pt-example"
 
-SRCREV = "R0.4.4"
+SRCREV = "master"
 
-DEPENDS = " libevent jansson"
+DEPENDS = " libevent jansson bluez5 kernel-devsrc"
 RDEPENDS_${PN} = " procps start-stop-daemon "
 
 # Installed packages
@@ -28,7 +28,8 @@ PACKAGES = "${PN} ${PN}-dbg"
 FILES_${PN} += "/opt \
                 /opt/arm \
                 /opt/arm/edge-core \
-                /opt/arm/pt-example"
+                /opt/arm/pt-example \
+                /opt/arm/ble-scanner"
 
 FILES_${PN}-dbg += "/opt/arm/.debug \
                     /usr/src/debug/mbed-edge-internal"
@@ -74,6 +75,7 @@ do_install() {
     install -d "${D}/opt/arm"
     install "${WORKDIR}/git/build/mcc-linux-x86/existing/bin/edge-core" "${D}/opt/arm"
     install "${WORKDIR}/git/build/mcc-linux-x86/existing/bin/pt-example" "${D}/opt/arm"
+    install "${WORKDIR}/git/build/mcc-linux-x86/existing/bin/ble-scanner" "${D}/opt/arm"
 
     install -d "${D}${sysconfdir}/init.d"
     install "${WORKDIR}/mbed-edge-core.sh" "${D}${sysconfdir}/init.d"
