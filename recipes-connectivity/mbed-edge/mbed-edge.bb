@@ -74,7 +74,7 @@ do_compile() {
 do_install() {
     install -d "${D}/opt/arm"
     install "${WORKDIR}/git/build/mcc-linux-x86/existing/bin/edge-core" "${D}/opt/arm"
-    install "${WORKDIR}/git/build/mcc-linux-x86/existing/bin/pt-example" "${D}/opt/arm"
+#    install "${WORKDIR}/git/build/mcc-linux-x86/existing/bin/pt-example" "${D}/opt/arm"
     install "${WORKDIR}/git/build/mcc-linux-x86/existing/bin/ble-scanner" "${D}/opt/arm"
 
     install -d "${D}${sysconfdir}/init.d"
