@@ -10,6 +10,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 SRC_URI = "git://git@github.com/imsherlock/mbed-edge.git;protocol=ssh; \
            file://mbed-edge-core.sh \
            file://mbed-edge-pt-example.sh \
+           file://mbed-edge-ble-scanner.sh \
            file://mbed_cloud_client_user_config.h \
            file://mbed_edge_config_developer.h \
            file://mbed_edge_config_update.h \
