@@ -115,5 +115,14 @@ do_install() {
 #    ln -sf ../init.d/mbed-edge-pt-example.sh      ${D}${sysconfdir}/rc4.d/S98mbed-edge-pt-example.sh
 #    ln -sf ../init.d/mbed-edge-pt-example.sh      ${D}${sysconfdir}/rc5.d/S98mbed-edge-pt-example.sh
 #    ln -sf ../init.d/mbed-edge-pt-example.sh      ${D}${sysconfdir}/rc6.d/K98mbed-edge-pt-example.sh
+
+    ln -sf ../init.d/mbed-edge-ble-scanner.sh      ${D}${sysconfdir}/rc0.d/K98mbed-edge-ble-scanner.sh
+    ln -sf ../init.d/mbed-edge-ble-scanner.sh      ${D}${sysconfdir}/rc1.d/K98mbed-edge-ble-scanner.sh
+    ln -sf ../init.d/mbed-edge-ble-scanner.sh      ${D}${sysconfdir}/rc2.d/S98mbed-edge-ble-scanner.sh
+    ln -sf ../init.d/mbed-edge-ble-scanner.sh      ${D}${sysconfdir}/rc3.d/S98mbed-edge-ble-scanner.sh
+    ln -sf ../init.d/mbed-edge-ble-scanner.sh      ${D}${sysconfdir}/rc4.d/S98mbed-edge-ble-scanner.sh
+    ln -sf ../init.d/mbed-edge-ble-scanner.sh      ${D}${sysconfdir}/rc5.d/S98mbed-edge-ble-scanner.sh
+    ln -sf ../init.d/mbed-edge-ble-scanner.sh      ${D}${sysconfdir}/rc6.d/K98mbed-edge-ble-scanner.sh
+
 }
 
