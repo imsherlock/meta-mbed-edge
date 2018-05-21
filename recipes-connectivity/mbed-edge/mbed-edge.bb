@@ -86,7 +86,7 @@ do_install() {
     install -d "${D}${sysconfdir}/logrotate.d"
     install -m 644 "${WORKDIR}/edge-core" "${D}${sysconfdir}/logrotate.d"
 #    install -m 644 "${WORKDIR}/pt-example" "${D}${sysconfdir}/logrotate.d"
-    install -m 644 "${WORKDIR}/ble-scanner" "${D}${sysconfdir}/logrotate.d"
+#    install -m 644 "${WORKDIR}/ble-scanner" "${D}${sysconfdir}/logrotate.d"
 
 #    install -m 755 "${SCRIPT_DIR}/arm_update_cmdline.sh"                  "${D}/opt/arm"
 #    install -m 755 "${SCRIPT_DIR}/yocto_rpi/arm_update_activate.sh"       "${D}/opt/arm"
